@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 공주 백제문화제 홍보 캠페인 리포트</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 40vh;
+            max-height: 450px;
+        }
+        .small-chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 40vh;
+            max-height: 350px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#073B4C]">2025 공주 백제문화제</h1>
+            <p class="text-xl md:text-2xl font-light text-[#118AB2] mt-2">홍보 문자 발송 캠페인 성과 리포트</p>
+        </header>
+
+        <section id="overview" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#073B4C]">캠페인 요약</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                    <p class="text-lg font-medium text-[#118AB2] mb-2">총 발송 건수</p>
+                    <p class="text-5xl font-extrabold text-[#06D6A0]">126,024<span class="text-2xl font-medium text-gray-500"> 건</span></p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                    <p class="text-lg font-medium text-[#118AB2] mb-2">총 클릭 수</p>
+                    <p class="text-5xl font-extrabold text-[#FFD166]">7,812<span class="text-2xl font-medium text-gray-500"> 회</span></p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                    <p class="text-lg font-medium text-[#118AB2] mb-2">전체 클릭률 (CTR)</p>
+                    <p class="text-5xl font-extrabold text-[#FF6B6B]">6.20<span class="text-2xl font-medium text-gray-500"> %</span></p>
+                </div>
+            </div>
+            <p class="text-center text-gray-600 mt-8 max-w-3xl mx-auto">
+                2025년 공주 백제문화제 홍보를 위해 총 12만 6천여 건의 홍보 문자를 발송하여 7천 8백 회 이상의 클릭을 유도했으며, 전체 캠페인 기간 동안 평균 6.2%의 높은 클릭률을 기록했습니다. 이는 타겟 고객에게 성공적으로 도달했음을 보여줍니다.
+            </p>
+        </section>
+        
+        <section id="daily-performance" class="mb-16 bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100">
+            <h2 class="text-3xl font-bold text-center mb-2 text-[#073B4C]">일자별 캠페인 성과</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+                축제 기간 동안 일자별 발송 건수와 클릭률의 변화를 통해 캠페인 효과를 분석합니다. 특히 주말과 특정 이벤트 안내 문자가 발송된 날의 사용자 반응이 두드러집니다.
+            </p>
+            <div class="chart-container">
+                <canvas id="dailyPerformanceChart"></canvas>
+            </div>
+        </section>
+
+        <section id="channel-comparison" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#073B4C]">채널별 효율성 비교: RCS vs MMS</h2>
+             <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+                이번 캠페인에서는 차세대 메시지 규격인 RCS와 전통적인 MMS를 함께 활용했습니다. 아래 데이터는 각 채널의 발송 비중과 클릭률을 비교하여 어떤 채널이 더 효과적이었는지 보여줍니다.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100">
+                     <h3 class="text-xl font-bold text-center mb-4 text-[#073B4C]">채널별 발송 비중</h3>
+                    <div class="small-chart-container">
+                        <canvas id="channelRatioChart"></canvas>
+                    </div>
+                     <p class="text-center text-gray-600 mt-4">
+                        전체 발송 건수의 약 72%가 RCS를 통해 이루어져, 최신 기술을 적극적으로 활용한 캠페인이었음을 알 수 있습니다.
+                    </p>
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100">
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#073B4C]">채널별 클릭률 (CTR)</h3>
+                    <div class="chart-container h-[40vh] max-h-[350px]">
+                        <canvas id="channelCtrChart"></canvas>
+                    </div>
+                     <p class="text-center text-gray-600 mt-4">
+                        RCS 메시지의 클릭률이 MMS보다 약 1.4%p 더 높게 나타났습니다. 이는 이미지, 버튼 등 상호작용 요소가 풍부한 RCS가 사용자의 참여를 유도하는 데 더 효과적임을 시사합니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta-analysis" class="mb-16 bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100">
+            <h2 class="text-3xl font-bold text-center mb-2 text-[#073B4C]">콘텐츠별 클릭 분석</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+                메시지에 포함된 다양한 버튼과 URL 중 어떤 콘텐츠가 사용자의 가장 많은 클릭을 유도했는지 순위를 확인합니다. '일자별 행사 안내'와 '주요 행사 안내'가 가장 높은 관심을 받았습니다.
+            </p>
+            <div class="chart-container">
+                <canvas id="ctaChart"></canvas>
+            </div>
+        </section>
+
+        <section id="demographics" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#073B4C]">타겟 고객 분석</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+                어떤 고객층이 캠페인에 가장 활발하게 반응했는지 성별, 연령, 그리고 거주 지역을 기준으로 분석하여 향후 마케팅 전략 수립에 활용할 수 있는 인사이트를 제공합니다.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100">
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#073B4C]">성별 및 연령별 클릭률</h3>
+                    <div class="chart-container">
+                        <canvas id="ageGenderChart"></canvas>
+                    </div>
+                    <p class="text-center text-gray-600 mt-4">
+                       40대와 50대 남녀 모두에서 높은 클릭률을 보였으며, 특히 40대 여성 그룹의 참여가 가장 두드러졌습니다. 이는 축제에 대한 주된 관심 고객층을 명확히 보여줍니다.
+                    </p>
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100">
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#073B4C]">거주 지역별 클릭률 (상위 5개)</h3>
+                    <div class="chart-container">
+                        <canvas id="locationChart"></canvas>
+                    </div>
+                    <p class="text-center text-gray-600 mt-4">
+                        세종특별자치시 거주자의 클릭률이 10% 이상으로 가장 높았으며, 공주시를 포함한 충남, 대전 등 인접 지역의 관심도가 높게 나타나 지역 기반 홍보의 중요성을 확인할 수 있습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 신규 추가 섹션: 향후 캠페인 제언 -->
+        <section id="suggestions" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#073B4C]">향후 캠페인 제언</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 제언 1: RCS 집중 전략 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#06D6A0]">
+                    <p class="text-xl font-bold text-[#073B4C] mb-3">1. RCS 중심의 채널 확장 및 콘텐츠 심화</p>
+                    <p class="text-gray-600">
+                        이번 캠페인에서 RCS의 클릭률(6.76%)이 MMS(5.34%)보다 유의미하게 높게 나타났으며, 특히 슬라이드형 RCS가 높은 호응도를 보였습니다. 향후 축제 홍보 시 **RCS를 핵심 채널**로 설정하고, 다양한 이미지와 인터랙티브 버튼을 활용한 콘텐츠 기획에 집중하여 사용자 참여도를 극대화해야 합니다.
+                    </p>
+                </div>
+                <!-- 제언 2: 방문 가망 고객 사전 유도 강화 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#FFD166]">
+                    <p class="text-xl font-bold text-[#073B4C] mb-3">2. 축제 전 방문가망고객 대상 조기 유도</p>
+                    <p class="text-gray-600">
+                        축제 시작일 이전부터 발송된 사전 홍보 문자는 높은 초기 클릭률을 기록하며 방문 가망 고객의 관심을 성공적으로 유도했습니다. 다음 축제에서는 이들을 대상으로 더욱 개인화된 콘텐츠를 사전 발송하여 **축제 방문을 조기에 확정**하도록 유도하는 전략을 강화할 필요가 있습니다.
+                    </p>
+                </div>
+                <!-- 제언 3: 실시간 현장 이슈 응대 메시지 활용 -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#FF6B6B]">
+                    <p class="text-xl font-bold text-[#073B4C] mb-3">3. 현장 이슈 발생 시 즉각적인 정보 제공</p>
+                    <p class="text-gray-600">
+                        '블랙이글쇼 안내' 및 '비행 소음 민원 안내'와 같은 실시간/현장 응대 메시지는 관람객의 궁금증 해소 및 소음 민원 요인에 대한 선제적인 안내를 통해 효과적으로 활용되었습니다. 이처럼 실시간으로 발생하는 **이벤트 정보, 교통, 안전, 민원 발생 요인**에 대한 현장 응대 메시지 활용을 통해 관람객 만족도를 높여야 합니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="text-center mt-12 py-6 border-t">
+            <p class="text-gray-500">리포트 생성일: 2025년 10월 29일</p>
+        </footer>
+
+    </div>
+
+<script>
+    const tooltipTitleCallback = {
+        plugins: {
+            tooltip: {
+                callbacks: {
+                    title: function(tooltipItems) {
+                        const item = tooltipItems[0];
+                        let label = item.chart.data.labels[item.dataIndex];
+                        if (Array.isArray(label)) {
+                            return label.join(' ');
+                        } else {
+                            return label;
+                        }
+                    }
+                }
+            }
+        }
+    };
+    
+    const dailyData = {
+        labels: ['10-02', '10-03', '10-04', '10-08', '10-08 (GF)', '10-09', '10-11', '10-13'],
+        sends: [20318, 20345, 20341, 10192, 10200, 18620, 10823, 15185],
+        ctr: [5.03, 5.58, 4.05, 3.53, 9.32, 1.67, 8.94, 14.74]
+    };
+    new Chart(document.getElementById('dailyPerformanceChart'), {
+        type: 'bar',
+        data: {
+            labels: dailyData.labels,
+            datasets: [{
+                label: '발송 건수',
+                data: dailyData.sends,
+                backgroundColor: '#118AB2',
+                yAxisID: 'y',
+                order: 2
+            }, {
+                label: '클릭률 (%)',
+                data: dailyData.ctr,
+                type: 'line',
+                borderColor: '#FF6B6B',
+                backgroundColor: '#FF6B6B',
+                tension: 0.3,
+                yAxisID: 'y1',
+                order: 1
+            }]
+        },
+        options: {
+            ...tooltipTitleCallback,
+            maintainAspectRatio: false,
+            responsive: true,
+            scales: {
+                x: {
+                    grid: { display: false },
+                    ticks: { font: { weight: 'bold' } }
+                },
+                y: {
+                    position: 'left',
+                    title: { display: true, text: '발송 건수 (건)', font: { size: 14 } }
+                },
+                y1: {
+                    position: 'right',
+                    title: { display: true, text: '클릭률 (%)', font: { size: 14 } },
+                    grid: { drawOnChartArea: false }
+                }
+            },
+            plugins: {
+                ...tooltipTitleCallback.plugins,
+                legend: { position: 'top' }
+            }
+        }
+    });
+
+    new Chart(document.getElementById('channelRatioChart'), {
+        type: 'doughnut',
+        data: {
+            labels: ['RCS', 'MMS'],
+            datasets: [{
+                label: '발송 비중',
+                data: [75944, 50080
+],
+                backgroundColor: ['#06D6A0', '#FFD166'],
+                borderColor: '#ffffff',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            ...tooltipTitleCallback,
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                ...tooltipTitleCallback.plugins,
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: { size: 14 }
+                    }
+                }
+            }
+        }
+    });
+
+    new Chart(document.getElementById('channelCtrChart'), {
+        type: 'bar',
+        data: {
+            labels: ['RCS', 'MMS'],
+            datasets: [{
+                label: '클릭률 (%)',
+                data: [7.20, 4.69],
+                backgroundColor: ['#06D6A0', '#FFD166'],
+                barPercentage: 0.6,
+                categoryPercentage: 0.7
+            }]
+        },
+        options: {
+            ...tooltipTitleCallback,
+            indexAxis: 'y',
+            maintainAspectRatio: false,
+            responsive: true,
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    title: { display: true, text: '클릭률 (%)' }
+                }
+            },
+            plugins: {
+                ...tooltipTitleCallback.plugins,
+                legend: { display: false }
+            }
+        }
+    });
+    
+    const ctaData = {
+        labels: ['사전 홍보', '개막식 안내', '웅진판타지아 안내', '무령왕의 길 안내', '비행소음안내', '에어쇼안내' 설문조사],
+        clicks: [1023, 1135, 824, 1311, 321, 968, 2239] 
+    };
+    new Chart(document.getElementById('ctaChart'), {
+        type: 'bar',
+        data: {
+            labels: ctaData.labels,
+            datasets: [{
+                label: '클릭 수',
+                data: ctaData.clicks,
+                backgroundColor: ['#FF6B6B', '#FFD166', '#06D6A0', '#118AB2', '#073B4C', '#7F7F7F']
+            }]
+        },
+        options: {
+            ...tooltipTitleCallback,
+            indexAxis: 'y',
+            maintainAspectRatio: false,
+            responsive: true,
+            scales: {
+                x: {
+                    title: { display: true, text: '클릭 수 (회)' }
+                }
+            },
+            plugins: {
+                 ...tooltipTitleCallback.plugins,
+                legend: { display: false }
+            }
+        }
+    });
+
+    new Chart(document.getElementById('ageGenderChart'), {
+        type: 'bar',
+        data: {
+            labels: ['10대 이하', '20대', '30대', '40대', '50대', '60대', '70대 이상'],
+            datasets: [{
+                label: '남성',
+                data: [1.13, 3.74, 6.69, 8.21, 6.25, 7.50, 6.41],
+                backgroundColor: '#118AB2',
+            }, {
+                label: '여성',
+                data: [4.85, 6.86, 9.33, 9.39, 6.99, 7.88, 2.5],
+                backgroundColor: '#FF6B6B',
+            }]
+        },
+        options: {
+            ...tooltipTitleCallback,
+            maintainAspectRatio: false,
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: { display: true, text: '클릭률 (%)' }
+                }
+            },
+            plugins: {
+                ...tooltipTitleCallback.plugins,
+                legend: { position: 'top' }
+            }
+        }
+    });
+
+    const locationData = {
+        labels: ['세종', '충남', '대전', '서울', '충북'],
+        ctr: [10.70, 7.55, 7.54, 6.74, 6.53]
+    };
+    new Chart(document.getElementById('locationChart'), {
+        type: 'bar',
+        data: {
+            labels: locationData.labels,
+            datasets: [{
+                label: '클릭률 (%)',
+                data: locationData.ctr,
+                backgroundColor: ['#FF6B6B', '#FFD166', '#06D6A0', '#118AB2', '#073B4C']
+            }]
+        },
+        options: {
+            ...tooltipTitleCallback,
+            maintainAspectRatio: false,
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: { display: true, text: '클릭률 (%)' }
+                }
+            },
+            plugins: {
+                ...tooltipTitleCallback.plugins,
+                legend: { display: false }
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>
